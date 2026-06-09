@@ -2,6 +2,7 @@
   --bg: #000000;
   --bg-soft: #0d0d0d;
   --gold: #d4af37;
+  --bg-accent: #1a1403;
   --gold-soft: #f0de9f;
   --text: #f7f7f7;
   --muted: #b5b5b5;
@@ -21,7 +22,7 @@ html {
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at top right, #1a1403 0, var(--bg) 40%);
+  background: radial-gradient(circle at top right, var(--bg-accent) 0, var(--bg) 40%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -116,6 +117,18 @@ h2 {
 
 .nav-menu.open {
   display: flex;
+}
+
+.nav-mobile-cta {
+  padding: 0.85rem 1rem;
+}
+
+.nav-mobile-cta .btn {
+  width: 100%;
+}
+
+.nav-desktop-cta {
+  display: none;
 }
 
 .nav-menu a {
@@ -309,6 +322,14 @@ h2 {
     background: transparent;
     border: 0;
     gap: 0.35rem;
+  }
+
+  .nav-mobile-cta {
+    display: none;
+  }
+
+  .nav-desktop-cta {
+    display: inline-flex;
   }
 
   .nav-menu a {
