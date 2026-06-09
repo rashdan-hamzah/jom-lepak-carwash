@@ -9,9 +9,9 @@ Premium static website for **Jom Lepak Car Wash (JLCW)**.
 - **Opening Hours:** 12pm - 10pm (Everyday)
 
 ## Files
-- `/tmp/workspace/rashdan-hamzah/jom-lepak-carwash/index.html` - Main page structure and all sections
-- `/tmp/workspace/rashdan-hamzah/jom-lepak-carwash/styles.css` - Premium black/gold responsive styling
-- `/tmp/workspace/rashdan-hamzah/jom-lepak-carwash/script.js` - Mobile menu and small UI interactions
+- `index.html` - Main page structure and all sections
+- `styles.css` - Premium black/gold responsive styling
+- `script.js` - Mobile menu and small UI interactions
 
 ## Sections Included
 - Navigation bar with logo placeholder, menu, and WhatsApp CTA
@@ -24,13 +24,13 @@ Premium static website for **Jom Lepak Car Wash (JLCW)**.
 - Contact section with WhatsApp call-to-action
 
 ## How to Use
-1. Open `/tmp/workspace/rashdan-hamzah/jom-lepak-carwash/index.html` in any browser.
+1. Open `index.html` in any browser.
 2. Replace placeholder logo/photos/reviews with real assets later.
 3. Update text or styles in `index.html` and `styles.css` as needed.
 
 ## Customization Notes
-- Primary color is set to black (`#000000`).
-- Secondary color is set to gold (`#D4AF37`).
+- Primary color is set to Black (`#000000`).
+- Secondary color is set to Gold (`#D4AF37`).
 - WhatsApp links use `https://wa.me/60143335120`.
 - Update the map coordinates URL in `index.html` if location changes.
 
