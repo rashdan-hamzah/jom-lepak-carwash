@@ -6,7 +6,7 @@ Premium static website for **Jom Lepak Car Wash (JLCW)**.
 - **Tagline:** Premium Car Care, Exclusive for You
 - **WhatsApp:** +60 14-333 5120
 - **Location Coordinates:** 2.955109266265198, 101.79097474301179
-- **Opening Hours:** 12pm - 10pm (Everyday)
+- **Opening Hours:** 12pm - 10pm (Every day)
 
 ## Files
 - `index.html` - Main page structure and all sections
