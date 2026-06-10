@@ -279,8 +279,48 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.testimonial p {
+.testimonial {
+  display: grid;
+  gap: 1rem;
+}
+
+.testimonial-header h3 {
+  margin-bottom: 0.35rem;
+  color: var(--gold-soft);
+  font-size: 1.1rem;
+}
+
+.testimonial-header .stars {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.testimonial-images {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.testimonial-images img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: #0f0f0f;
+}
+
+.testimonial-content p,
+.testimonial-content li {
   color: var(--muted);
+}
+
+.testimonial-content p:last-child {
+  margin-bottom: 0;
+}
+
+.testimonial-content ol {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
 }
 
 .map-wrapper {
@@ -345,6 +385,10 @@ h2 {
 
   .cards-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .testimonial-images-double {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .cards-5 {
