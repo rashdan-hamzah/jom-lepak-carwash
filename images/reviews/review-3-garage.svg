@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Ain Syuhada review image</title>
+  <desc id="desc">White car in garage placeholder for testimonial</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#151515"/>
+      <stop offset="100%" stop-color="#2f2309"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <rect x="40" y="40" width="1120" height="720" rx="24" fill="none" stroke="#d4af37" stroke-width="4"/>
+  <text x="600" y="380" text-anchor="middle" fill="#f0de9f" font-size="52" font-family="Inter, Arial, sans-serif">Review Image 6</text>
+  <text x="600" y="450" text-anchor="middle" fill="#f7f7f7" font-size="38" font-family="Inter, Arial, sans-serif">White Car in Garage</text>
+</svg>
