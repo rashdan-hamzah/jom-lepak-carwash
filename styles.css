@@ -350,6 +350,14 @@ h2 {
   text-align: center;
 }
 
+.btn-package {
+  border: 3px solid #333; /* Change #333 to your preferred color */
+  padding: 10px 20px;     /* Optional: adds spacing inside the button */
+  display: inline-block;  /* Ensures borders and padding apply correctly */
+  text-decoration: none;  /* Removes the link underline */
+}
+
+
 @media (min-width: 768px) {
   .menu-toggle {
     display: none;
