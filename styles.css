@@ -357,6 +357,12 @@ h2 {
   text-decoration: none;  /* Removes the link underline */
 }
 
+.logo-frame {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
 
 @media (min-width: 768px) {
   .menu-toggle {
