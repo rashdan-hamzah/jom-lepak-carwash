@@ -363,6 +363,37 @@ h2 {
     display: block;
 }
 
+.package-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.package-image-card {
+  overflow: hidden;
+  border-radius: 18px;
+  transition: transform .3s ease;
+}
+
+.package-image-card:hover {
+  transform: translateY(-4px);
+}
+
+.package-image-card img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+@media (max-width: 768px) {
+
+  .package-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+}
+
 
 @media (min-width: 768px) {
   .menu-toggle {
