@@ -385,6 +385,62 @@ h2 {
   border-radius: 18px;
 }
 
+.membership-card {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.membership-image {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  border: 2px solid rgba(212,175,55,.25);
+  box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+.membership-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-membership {
+
+  display: inline-block;
+
+  background: linear-gradient(
+    135deg,
+    #d4af37,
+    #f7d774
+  );
+
+  color: #000;
+
+  font-weight: 800;
+
+  font-size: 1.1rem;
+
+  padding: 18px 36px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  transition: all .3s ease;
+
+  box-shadow:
+    0 8px 25px rgba(212,175,55,.35);
+
+}
+
+.btn-membership:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(212,175,55,.5);
+
+}
+
 @media (max-width: 768px) {
 
   .package-gallery {
