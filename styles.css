@@ -94,13 +94,43 @@ h2 {
 }
 
 .logo-frame {
-  display: inline-flex;
-  border: 1px dashed var(--gold);
-  color: var(--gold);
-  border-radius: 9px;
-  padding: 0.55rem 0.85rem;
-  font-weight: 600;
-  font-size: 0.85rem;
+  width: 70px;
+  height: 70px;
+
+  object-fit: contain;
+  background: #000;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--gold);
+
+  box-shadow:
+    0 0 15px rgba(212,175,55,.35);
+
+  transition: all .3s ease;
+
+  display: block;
+}
+
+.logo-frame:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 25px rgba(212,175,55,.55);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+
+  .logo-frame {
+    width: 58px;
+    height: 58px;
+  }
+
 }
 
 .nav-menu {
