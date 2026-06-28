@@ -756,7 +756,7 @@ h2 {
 /* mobile tuning */
 @media (max-width:768px){
   .promo-item{
-    flex:0 0 260px;
+    flex: 0 0 78vw;
   }
 }
 
@@ -781,18 +781,7 @@ body {
   overflow-x: hidden;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
 
-body, html {
-  overflow-x: clip;
-}
-
-section, div {
-  max-width: 100%;
-}
 
 .hero-promo-wrapper,
 .package-gallery,
