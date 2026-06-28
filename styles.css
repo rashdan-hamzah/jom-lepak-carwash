@@ -276,6 +276,7 @@ h2 {
 .grid-two {
   display: grid;
   gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .placeholder-card,
@@ -785,6 +786,10 @@ html, body {
   overflow-x: hidden;
 }
 
+body, html {
+  overflow-x: clip;
+}
+
 section, div {
   max-width: 100%;
 }
@@ -796,6 +801,16 @@ section, div {
   max-width: 100%;
 }
 
+.hero-promo-wrapper {
+  min-width: 0;
+  overflow: hidden;
+}
+
 img {
   display: block;
+}
+
+.hero-content > div {
+  min-width: 0;
+  max-width: 100%;
 }
