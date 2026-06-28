@@ -19,6 +19,11 @@ img {
   max-width: 100%;
 }
 
+.promo-slider,
+.package-gallery {
+  max-width: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
