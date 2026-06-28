@@ -569,14 +569,13 @@ h2 {
 }
 
 /* =========================
-   PROMO SLIDER (FIXED CLEAN VERSION)
+   PROMO SLIDER (FIXED)
 ========================= */
 
 .hero-promo-wrapper{
   width:100%;
 }
 
-/* slider */
 .promo-slider{
   display:flex;
   gap:18px;
@@ -595,12 +594,9 @@ h2 {
   display:none;
 }
 
-/* card */
 .promo-card{
   position:relative;
-
   flex:0 0 260px;
-
   aspect-ratio: 9 / 16;
 
   border-radius:28px;
@@ -608,76 +604,79 @@ h2 {
 
   scroll-snap-align:center;
 
-  background:#111;
-
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
   border:1px solid rgba(212,175,55,.2);
 
-  box-shadow:0 20px 50px rgba(0,0,0,.45);
+  background:#111;
 }
 
-/* ✅ FIX: image no longer cropped */
 .promo-card img{
   width:100%;
   height:100%;
-
-  object-fit: contain;   /* KEY CHANGE */
-  background: #000;      /* fills empty space nicely */
-
+  object-fit:cover;
   display:block;
 }
 
-/* overlay gradient (still keeps readability for button) */
+/* dark overlay gradient */
 .promo-card::after{
   content:"";
   position:absolute;
   inset:0;
-
   background:linear-gradient(
     to top,
-    rgba(0,0,0,.75) 0%,
-    rgba(0,0,0,.25) 40%,
+    rgba(0,0,0,.85) 10%,
+    rgba(0,0,0,.25) 50%,
     rgba(0,0,0,0) 100%
   );
 }
 
-/* content wrapper */
+/* content */
 .promo-overlay{
   position:absolute;
   bottom:18px;
   left:18px;
   right:18px;
   z-index:2;
-
-  display:flex;
-  justify-content:center;
+  color:#fff;
 }
 
-/* REMOVE TEXT → ONLY CTA */
+.promo-badge{
+  display:inline-block;
+  font-size:.72rem;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+.promo-overlay h3{
+  margin:0 0 6px;
+  font-size:1.25rem;
+}
+
+.promo-overlay p{
+  font-size:.9rem;
+  opacity:.85;
+  margin-bottom:12px;
+}
+
+/* CTA button INSIDE card (important) */
 .promo-cta{
   display:inline-flex;
   justify-content:center;
   align-items:center;
 
   width:100%;
-
-  padding:14px;
+  padding:12px 14px;
 
   border-radius:999px;
-
   background:var(--gold);
   color:#111;
 
   font-weight:800;
-
   text-align:center;
-
-  box-shadow:0 10px 25px rgba(212,175,55,.25);
-}
-
-/* TODAY highlight */
-.promo-card.active{
-  border:2px solid var(--gold);
-  transform:scale(1.02);
 }
 
 /* dots */
@@ -701,15 +700,10 @@ h2 {
   background:var(--gold);
 }
 
-/* mobile tuning */
-@media (max-width:768px){
-  .promo-card{
-    flex:0 0 240px;
-  }
-
-  .promo-cta{
-    font-size:0.95rem;
-  }
+/* highlight today */
+.promo-card.active{
+  border:2px solid var(--gold);
+  transform:scale(1.02);
 }
 
 @media (min-width: 1024px) {
