@@ -610,7 +610,7 @@ h2 {
 .promo-image{
   width:100%;
 
-  aspect-ratio: 4 / 5;   /* IMPORTANT FIX */
+  aspect-ratio: 4 / 5.5;   /* IMPORTANT FIX */
   border-radius:22px;
 
   overflow:hidden;
