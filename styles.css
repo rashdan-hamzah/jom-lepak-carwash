@@ -689,6 +689,12 @@ h2 {
   background:var(--gold);
 }
 
+.promo-text{
+  font-size: 0.9rem;
+  color: rgba(255,255,255,.75);
+  margin: 0;
+}
+
 /* mobile tuning */
 @media (max-width:768px){
   .promo-item{
