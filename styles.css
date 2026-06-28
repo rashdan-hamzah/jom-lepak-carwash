@@ -779,3 +779,23 @@ h2 {
 body {
   overflow-x: hidden;
 }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+section, div {
+  max-width: 100%;
+}
+
+.hero-promo-wrapper,
+.package-gallery,
+.promo-slider {
+  width: 100%;
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
