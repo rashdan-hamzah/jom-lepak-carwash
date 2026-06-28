@@ -803,3 +803,18 @@ img {
   min-width: 0;
   max-width: 100%;
 }
+
+.package-heading{
+    margin: 2.8rem 0 1rem;
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.package-heading:first-of-type{
+    margin-top: 2rem;
+}
+
+.package-gallery{
+    margin-bottom: 1rem;
+}
