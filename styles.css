@@ -13,8 +13,7 @@
 
 html, body {
   margin: 0;
-  width: 100%;
-  max-width: 100%;
+  padding: 0;
   overflow-x: hidden;
 }
 
@@ -764,4 +763,19 @@ h2 {
   .cards-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
+}
+
+.package-gallery,
+.promo-slider {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.package-card,
+.promo-item {
+  min-width: 0;
+}
+
+body {
+  overflow-x: hidden;
 }
