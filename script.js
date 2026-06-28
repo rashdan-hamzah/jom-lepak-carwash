@@ -26,166 +26,169 @@ if (yearEl) {
 }
 
 /* ======================================================
-   PROMOTION SLIDER
+   HERO PROMO SLIDER (EXISTING SYSTEM - DO NOT BREAK)
 ====================================================== */
 
-const slider = document.querySelector(".hero-slider");
-const cards = document.querySelectorAll(".hero-card");
-const dots = document.querySelectorAll(".hero-dot");
+const heroSlider = document.querySelector(".hero-slider");
+const heroCards = document.querySelectorAll(".hero-card");
+const heroDots = document.querySelectorAll(".hero-dot");
 
-if (slider && cards.length) {
+if (heroSlider && heroCards.length) {
 
-    // -------------------------------
-    // Highlight today's promotion
-    // -------------------------------
+  const today = new Date().getDay();
 
-    const today = new Date().getDay();
+  let activePromo = 0;
 
-    let activePromo = 0;
+  if (today === 1 || today === 2) {
+    activePromo = 0;
+  } else if (today === 3 || today === 4) {
+    activePromo = 1;
+  } else if (today === 5 || today === 6) {
+    activePromo = 2;
+  } else {
+    activePromo = 3;
+  }
 
-    if (today === 1 || today === 2) {
+  heroCards[activePromo].classList.add("hero-active");
 
-        activePromo = 0; // Monday & Tuesday
+  // SAFE: scroll instead of DOM mutation
+  heroCards[activePromo].scrollIntoView({
+    behavior: "smooth",
+    inline: "center"
+  });
 
-    } else if (today === 3 || today === 4) {
+  function updateHeroDots() {
+    if (!heroDots.length) return;
 
-        activePromo = 1; // Wednesday & Thursday
+    const cardWidth = heroSlider.querySelector(".hero-card").offsetWidth + 18;
 
-    } else if (today === 5 || today === 6) {
+    const index = Math.round(heroSlider.scrollLeft / cardWidth);
 
-        activePromo = 2; // Friday & Saturday
+    heroDots.forEach(dot => dot.classList.remove("active"));
 
-    } else {
+    if (heroDots[index]) {
+      heroDots[index].classList.add("active");
+    }
+  }
 
-        activePromo = 3; // Sunday
+  updateHeroDots();
+  heroSlider.addEventListener("scroll", updateHeroDots);
 
+  // drag scroll (desktop)
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  heroSlider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    heroSlider.classList.add("dragging");
+    startX = e.pageX - heroSlider.offsetLeft;
+    scrollLeft = heroSlider.scrollLeft;
+  });
+
+  heroSlider.addEventListener("mouseleave", () => {
+    isDown = false;
+    heroSlider.classList.remove("dragging");
+  });
+
+  heroSlider.addEventListener("mouseup", () => {
+    isDown = false;
+    heroSlider.classList.remove("dragging");
+  });
+
+  heroSlider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+
+    e.preventDefault();
+
+    const x = e.pageX - heroSlider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+
+    heroSlider.scrollLeft = scrollLeft - walk;
+  });
+}
+
+/* ======================================================
+   PROMO SLIDER (NEW SYSTEM - CLEAN & SAFE)
+====================================================== */
+
+const promoSlider = document.querySelector(".promo-slider");
+const promoCards = document.querySelectorAll(".promo-card");
+const promoDots = document.querySelectorAll(".promo-dot");
+
+if (promoSlider && promoCards.length) {
+
+  const today = new Date().getDay();
+
+  let activeIndex = 0;
+
+  // 1. highlight correct promo based on data-days
+  promoCards.forEach((card, index) => {
+
+    const days = card.dataset.days
+      .split(",")
+      .map(n => Number(n.trim()));
+
+    if (days.includes(today)) {
+      card.classList.add("active");
+      activeIndex = index;
     }
 
-    cards[activePromo].classList.add("hero-active");
+  });
 
-    // ----------------------------------------
-    // Move today's card to the beginning
-    // ----------------------------------------
+  // 2. auto scroll to today's promo (smooth UX)
+  setTimeout(() => {
+    promoCards[activeIndex].scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest"
+    });
+  }, 300);
 
-    slider.prepend(cards[activePromo]);
+  // 3. set active dot
+  if (promoDots[activeIndex]) {
+    promoDots[activeIndex].classList.add("active");
+  }
 
-    // ----------------------------------------
-    // Auto scroll to beginning
-    // ----------------------------------------
+  // 4. sync dots with manual scrolling
+  promoSlider.addEventListener("scroll", () => {
 
-    slider.scrollLeft = 0;
+    const cardWidth = promoCards[0].offsetWidth + 18;
 
-    // ----------------------------------------
-    // Pagination dots
-    // ----------------------------------------
+    const index = Math.round(promoSlider.scrollLeft / cardWidth);
 
-    function updateDots() {
+    promoDots.forEach(dot => dot.classList.remove("active"));
 
-        if (!dots.length) return;
-
-        const cardWidth = slider.querySelector(".hero-card").offsetWidth + 18;
-
-        const index = Math.round(slider.scrollLeft / cardWidth);
-
-        dots.forEach(dot => dot.classList.remove("active"));
-
-        if (dots[index]) {
-
-            dots[index].classList.add("active");
-
-        }
-
+    if (promoDots[index]) {
+      promoDots[index].classList.add("active");
     }
 
-    updateDots();
-
-    slider.addEventListener("scroll", updateDots);
-
-    // ----------------------------------------
-    // Drag scrolling (desktop)
-    // ----------------------------------------
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener("mousedown", (e) => {
-
-        isDown = true;
-
-        slider.classList.add("dragging");
-
-        startX = e.pageX - slider.offsetLeft;
-
-        scrollLeft = slider.scrollLeft;
-
-    });
-
-    slider.addEventListener("mouseleave", () => {
-
-        isDown = false;
-
-        slider.classList.remove("dragging");
-
-    });
-
-    slider.addEventListener("mouseup", () => {
-
-        isDown = false;
-
-        slider.classList.remove("dragging");
-
-    });
-
-    slider.addEventListener("mousemove", (e) => {
-
-        if (!isDown) return;
-
-        e.preventDefault();
-
-        const x = e.pageX - slider.offsetLeft;
-
-        const walk = (x - startX) * 1.5;
-
-        slider.scrollLeft = scrollLeft - walk;
-
-    });
+  });
 
 }
 
 /* ======================================================
-   OPTIONAL AUTOPLAY
+   OPTIONAL AUTOPLAY (DISABLED BY DEFAULT)
 ====================================================== */
 
-// Uncomment this if you want the banners to
-// automatically slide every 6 seconds.
-
 /*
-
-let current = 0;
+let currentHero = 0;
 
 setInterval(() => {
+  if (!heroSlider) return;
 
-    if (!slider) return;
+  const cardWidth = heroSlider.querySelector(".hero-card").offsetWidth + 18;
 
-    const cardWidth = slider.querySelector(".hero-card").offsetWidth + 18;
+  currentHero++;
 
-    current++;
+  if (currentHero >= heroSlider.children.length) {
+    currentHero = 0;
+  }
 
-    if (current >= slider.children.length) {
-
-        current = 0;
-
-    }
-
-    slider.scrollTo({
-
-        left: current * cardWidth,
-
-        behavior: "smooth"
-
-    });
+  heroSlider.scrollTo({
+    left: currentHero * cardWidth,
+    behavior: "smooth"
+  });
 
 }, 6000);
-
 */
