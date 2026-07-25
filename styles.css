@@ -820,7 +820,7 @@ img {
 }
 
 /* ============================================================
-   PROMO PANEL — POSTER MATCH LAYOUT
+   PROMO PANEL — POSTER MATCH LAYOUT (REFINED)
    ============================================================ */
 .hero-promo-wrapper {
   width: 100%;
@@ -828,7 +828,7 @@ img {
 }
 
 .promo-panel-head { 
-  margin-bottom: 14px; 
+  margin-bottom: 16px; 
   text-align: center;
 }
 
@@ -849,7 +849,7 @@ img {
   margin: 0; 
 }
 
-/* 2-column grid layout even on mobile to reduce vertical scroll length */
+/* 2-column grid layout across all screen sizes for uniformity */
 .promo-grid { 
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
@@ -871,10 +871,10 @@ img {
   grid-column: 1 / -1; 
 }
 
-/* Colored Header matching the poster banner style */
+/* Colored Header */
 .promo-card-header {
   background: var(--card-bg, #222);
-  padding: 8px 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -882,33 +882,34 @@ img {
 }
 
 .promo-card-icon {
-  width: 24px; height: 24px;
+  width: 22px; height: 22px;
   display: flex; align-items: center; justify-content: center;
   flex: none;
 }
-.promo-card-icon svg { width: 18px; height: 18px; fill: #fff; }
+.promo-card-icon svg { width: 16px; height: 16px; fill: #fff; }
 
 .promo-card-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Card Body Content */
+/* Card Body Content with optimized vertical height */
 .promo-card-body {
-  padding: 10px;
+  padding: 12px 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   flex-grow: 1;
   justify-content: space-between;
   text-align: center;
+  min-height: 140px;
 }
 
 .promo-days-badge {
@@ -927,7 +928,7 @@ img {
 .promo-main-offer {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   color: #fff;
   line-height: 1.2;
@@ -935,15 +936,15 @@ img {
 
 .promo-main-offer span {
   display: block;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--card-accent, var(--gold));
 }
 
 .promo-verify-box {
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   color: var(--muted);
   border: 1px dashed rgba(255,255,255,0.15);
-  padding: 4px 6px;
+  padding: 5px 6px;
   border-radius: 6px;
   background: rgba(0,0,0,0.2);
 }
@@ -953,51 +954,55 @@ img {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
 }
 
 .promo-addon-badge {
   background: var(--gold);
   color: #000;
   font-weight: 800;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border-radius: 4px;
 }
 
-/* Saturday Specific Split Layout */
+/* Saturday Specific Compact Grid Styling */
 .saturday-body {
   text-align: left;
-  gap: 6px;
+  gap: 8px;
+  justify-content: flex-start;
 }
 
 .sat-price-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
 }
 
 .sat-box {
   background: rgba(0,0,0,0.3);
-  padding: 6px;
+  padding: 5px 8px;
   border-radius: 6px;
   border-left: 3px solid #FB923C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sat-box-title {
-  font-size: 0.55rem;
+  font-size: 0.58rem;
   color: var(--muted);
   text-transform: uppercase;
-  display: block;
+  font-weight: 600;
 }
 
 .sat-box-price {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: #fff;
 }
 .sat-box-price small {
-  font-size: 0.55rem;
+  font-size: 0.52rem;
   color: var(--muted);
   text-decoration: line-through;
   font-weight: 400;
@@ -1007,12 +1012,12 @@ img {
 .sat-features {
   list-style: none;
   padding: 0;
-  margin: 2px 0 0;
-  font-size: 0.6rem;
+  margin: 0;
+  font-size: 0.58rem;
   color: #ddd;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px 6px;
+  gap: 3px 4px;
 }
 .sat-features li::before {
   content: "✓ ";
@@ -1026,6 +1031,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 10px 14px;
+  min-height: auto;
 }
 
 .sunday-content {
@@ -1036,14 +1042,14 @@ img {
 }
 
 .sunday-title-group h3 {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   margin: 0;
   color: #fff;
   text-transform: uppercase;
 }
 
 .sunday-title-group p {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   margin: 0;
   font-weight: 800;
   color: #FB7185;
@@ -1054,13 +1060,14 @@ img {
   background: rgba(255,255,255,0.06);
   color: var(--gold-soft);
   text-align: center;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  padding: 4px;
+  padding: 5px;
   border-radius: 4px;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.08);
   transition: background 0.2s;
+  display: block;
 }
 .promo-mini-btn:hover {
   background: var(--gold);
