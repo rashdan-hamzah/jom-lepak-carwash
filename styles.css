@@ -820,14 +820,17 @@ img {
 }
 
 /* ============================================================
-   PROMO PANEL — COMPACT UX
+   PROMO PANEL — POSTER MATCH LAYOUT
    ============================================================ */
 .hero-promo-wrapper {
   width: 100%;
   min-width: 0;
 }
 
-.promo-panel-head { margin-bottom: 16px; }
+.promo-panel-head { 
+  margin-bottom: 14px; 
+  text-align: center;
+}
 
 .promo-panel-eyebrow {
   display: block;
@@ -835,116 +838,248 @@ img {
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  font-size: .72rem;
-  margin-bottom: 4px;
+  font-size: .7rem;
+  margin-bottom: 2px;
 }
 
 .promo-panel-title { 
   font-family: 'Poppins', sans-serif; 
   font-weight: 700; 
-  font-size: 1.2rem; 
+  font-size: 1.25rem; 
   margin: 0; 
 }
 
+/* 2-column grid layout even on mobile to reduce vertical scroll length */
 .promo-grid { 
   display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 12px; /* Tighter gap */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px; 
 }
 
 .promo-card {
-  background: linear-gradient(165deg, #1c1a17, #161513);
+  background: rgba(20, 20, 20, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 14px 16px; /* Tighter padding */
-  position: relative;
   overflow: hidden;
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-.promo-card::before {
-  content: "";
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent 85%);
+.promo-card--wide { 
+  grid-column: 1 / -1; 
 }
 
-.promo-card:hover { 
-  transform: translateY(-2px); 
-  border-color: rgba(255, 255, 255, .18); 
-  box-shadow: var(--shadow);
-}
-
-.promo-card--wide { grid-column: 1 / -1; }
-
-/* NEW: Puts icon and title on the same line to save vertical space */
+/* Colored Header matching the poster banner style */
 .promo-card-header {
+  background: var(--card-bg, #222);
+  padding: 8px 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.promo-card-icon {
-  width: 32px; height: 32px; border-radius: 8px; flex: none;
-  display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  gap: 6px;
   color: #fff;
 }
 
-.promo-card-icon svg { width: 16px; height: 16px; }
+.promo-card-icon {
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  flex: none;
+}
+.promo-card-icon svg { width: 18px; height: 18px; fill: #fff; }
 
-.promo-card-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; margin: 0; color: #fff; line-height: 1.2; }
-
-.promo-days {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-  color: #111;
-  font-weight: 700; font-size: .65rem; letter-spacing: .05em; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 999px; margin-bottom: 10px;
+.promo-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.promo-offer { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: .02em; color: #fff; margin: 0 0 4px; }
-.promo-offer-free { display: block; font-weight: 800; font-size: 1.25rem; line-height: 1.1; color: var(--accent); margin-bottom: 2px; }
-.promo-offer-free--sm { font-size: 1.05rem; display: inline; margin-right: 6px; }
+/* Card Body Content */
+.promo-card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+  justify-content: space-between;
+  text-align: center;
+}
 
-.promo-addon { display: inline-block; margin-top: 6px; background: rgba(255,255,255,.07); color: var(--accent); border: 1px solid rgba(255,255,255,.16); border-radius: 6px; padding: 2px 8px; font-size: .68rem; font-weight: 700; }
+.promo-days-badge {
+  background: linear-gradient(90deg, #d4af37, #f7d774);
+  color: #111;
+  font-weight: 800;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0 auto;
+}
 
-.promo-verify { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,.08); color: var(--muted); font-size: .72rem; line-height: 1.2; }
-.promo-verify--plain { border-top: none; padding-top: 0; margin-top: 8px; }
-.promo-verify svg { width: 14px; height: 14px; flex: none; color: var(--accent); }
+.promo-main-offer {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.2;
+}
 
-.promo-card-cta { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; color: var(--accent); font-weight: 700; font-size: .78rem; text-decoration: none; transition: gap .18s ease; }
-.promo-card-cta:hover { gap: 8px; }
+.promo-main-offer span {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--card-accent, var(--gold));
+}
 
-/* Saturday Specific */
-.promo-price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
-.promo-price-row:last-of-type { border-bottom: none; }
-.promo-price-label { color: var(--muted); font-size: .75rem; }
-.promo-price-value { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--accent); text-align: right; }
-.promo-price-value small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: .6rem; color: var(--muted); text-decoration: line-through; }
-.promo-feature-list { list-style: none; margin: 10px 0 0; padding: 10px 0 0; border-top: 1px dashed rgba(255,255,255,.08); display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
-.promo-feature-list li { font-size: .7rem; color: #e5e5e5; display: flex; align-items: center; gap: 6px; line-height: 1.2; }
-.promo-feature-list li::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex: none; }
+.promo-verify-box {
+  font-size: 0.62rem;
+  color: var(--muted);
+  border: 1px dashed rgba(255,255,255,0.15);
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.2);
+}
 
-/* Sunday Specific */
-.promo-banner-inner { display: flex; align-items: center; gap: 14px; }
-.promo-banner-text { flex: 1; min-width: 0; }
-.promo-banner-text .promo-card-title { margin-bottom: 2px; }
-.promo-banner-text .promo-offer { margin: 0; }
-.promo-banner .promo-card-cta { margin-top: 0; flex: none; white-space: nowrap; }
-.promo-terms { color: var(--muted); font-size: .68rem; margin: 8px 0 0; }
+.promo-addon-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.65rem;
+}
 
-/* Accent Variants */
-.promo-card--student { --accent: #8B5CF6; --accent-dark: #5B21B6; }
-.promo-card--grab { --accent: #22C55E; --accent-dark: #15803D; }
-.promo-card--working { --accent: #38BDF8; --accent-dark: #0369A1; }
-.promo-card--saturday { --accent: #FB923C; --accent-dark: #C2410C; }
-.promo-card--sunday { --accent: #FB7185; --accent-dark: #BE123C; }
+.promo-addon-badge {
+  background: var(--gold);
+  color: #000;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
 
-/* Mobile Responsiveness */
-@media (max-width: 560px) {
-  .promo-grid { grid-template-columns: 1fr; }
-  .promo-card--wide { grid-column: 1; }
-  .promo-banner-inner { flex-wrap: wrap; gap: 10px; }
-  .promo-banner .promo-card-cta { margin-top: 6px; }
+/* Saturday Specific Split Layout */
+.saturday-body {
+  text-align: left;
+  gap: 6px;
+}
+
+.sat-price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.sat-box {
+  background: rgba(0,0,0,0.3);
+  padding: 6px;
+  border-radius: 6px;
+  border-left: 3px solid #FB923C;
+}
+
+.sat-box-title {
+  font-size: 0.55rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  display: block;
+}
+
+.sat-box-price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #fff;
+}
+.sat-box-price small {
+  font-size: 0.55rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  font-weight: 400;
+  margin-left: 3px;
+}
+
+.sat-features {
+  list-style: none;
+  padding: 0;
+  margin: 2px 0 0;
+  font-size: 0.6rem;
+  color: #ddd;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 6px;
+}
+.sat-features li::before {
+  content: "✓ ";
+  color: #FB923C;
+  font-weight: bold;
+}
+
+/* Sunday Banner Compact */
+.sunday-body {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+}
+
+.sunday-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.sunday-title-group h3 {
+  font-size: 0.75rem;
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.sunday-title-group p {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 800;
+  color: #FB7185;
+}
+
+/* Mini Action CTA inside cards */
+.promo-mini-btn {
+  background: rgba(255,255,255,0.06);
+  color: var(--gold-soft);
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.2s;
+}
+.promo-mini-btn:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+/* Theme Colors per Card matching Poster */
+.card-student { --card-bg: #6B21A8; --card-accent: #C084FC; }
+.card-grab { --card-bg: #15803D; --card-accent: #4ADE80; }
+.card-working { --card-bg: #1E40AF; --card-accent: #60A5FA; }
+.card-saturday { --card-bg: #C2410C; --card-accent: #FB923C; }
+.card-sunday { --card-bg: #BE123C; --card-accent: #FB7185; }
+
+/* Desktop adjustment */
+@media (min-width: 768px) {
+  .promo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .promo-card--wide {
+    grid-column: span 3;
+  }
 }
