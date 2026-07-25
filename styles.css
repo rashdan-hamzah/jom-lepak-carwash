@@ -819,274 +819,544 @@ img {
     margin-bottom: 1rem;
 }
 
-/* ============================================================
-   PROMO PANEL — POSTER MATCH LAYOUT (REFINED)
-   ============================================================ */
-.hero-promo-wrapper {
-  width: 100%;
-  min-width: 0;
+/* ===========================================================
+   JLCW PROMOTION PANEL
+=========================================================== */
+
+.hero-promo-wrapper{
+    width:100%;
 }
 
-.promo-panel-head { 
-  margin-bottom: 16px; 
-  text-align: center;
+.promo-panel-head{
+    text-align:center;
+    margin-bottom:24px;
 }
 
-.promo-panel-eyebrow {
-  display: block;
-  color: var(--gold-soft);
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  font-size: .7rem;
-  margin-bottom: 2px;
+.promo-panel-eyebrow{
+    display:block;
+    color:#d4af37;
+    font-size:.8rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:8px;
 }
 
-.promo-panel-title { 
-  font-family: 'Poppins', sans-serif; 
-  font-weight: 700; 
-  font-size: 1.25rem; 
-  margin: 0; 
+.promo-panel-title{
+    color:#fff;
+    font-size:2rem;
+    font-weight:900;
 }
 
-/* 2-column grid layout across all screen sizes for uniformity */
-.promo-grid { 
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 10px; 
+/* ==========================
+GRID
+========================== */
+
+.promo-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:20px;
+
+    align-items:stretch;
+
 }
 
-.promo-card {
-  background: rgba(20, 20, 20, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+/* ==========================
+CARD
+========================== */
+
+.promo-card{
+
+    background:#ffffff;
+
+    color:#111;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:2px solid #ececec;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.25s;
 }
 
-.promo-card--wide { 
-  grid-column: 1 / -1; 
+.promo-card:hover{
+
+    transform:translateY(-5px);
+
 }
 
-/* Colored Header */
-.promo-card-header {
-  background: var(--card-bg, #222);
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #fff;
+/* ==========================
+HEADER
+========================== */
+
+.promo-card-header{
+
+    background:var(--card-bg);
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px 18px;
+
 }
 
-.promo-card-icon {
-  width: 22px; height: 22px;
-  display: flex; align-items: center; justify-content: center;
-  flex: none;
-}
-.promo-card-icon svg { width: 16px; height: 16px; fill: #fff; }
+.promo-card-icon{
 
-.promo-card-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    width:48px;
 
-/* Card Body Content with optimized vertical height */
-.promo-card-body {
-  padding: 12px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex-grow: 1;
-  justify-content: space-between;
-  text-align: center;
-  min-height: 140px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex:none;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+
 }
 
-.promo-days-badge {
-  background: linear-gradient(90deg, #d4af37, #f7d774);
-  color: #111;
-  font-weight: 800;
-  font-size: 0.58rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 6px;
-  border-radius: 4px;
-  display: inline-block;
-  margin: 0 auto;
+.promo-card-icon svg{
+
+    width:24px;
+
+    height:24px;
+
+    fill:var(--card-bg);
+
 }
 
-.promo-main-offer {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #fff;
-  line-height: 1.2;
+.promo-card-title{
+
+    font-size:1.05rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:.04em;
+
+    margin:0;
+
 }
 
-.promo-main-offer span {
-  display: block;
-  font-size: 1.1rem;
-  color: var(--card-accent, var(--gold));
+/* ==========================
+BODY
+========================== */
+
+.promo-card-body{
+
+    padding:22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    flex:1;
+
+    text-align:center;
+
 }
 
-.promo-verify-box {
-  font-size: 0.6rem;
-  color: var(--muted);
-  border: 1px dashed rgba(255,255,255,0.15);
-  padding: 5px 6px;
-  border-radius: 6px;
-  background: rgba(0,0,0,0.2);
+/* ==========================
+DAY RIBBON
+========================== */
+
+.promo-days-badge{
+
+    display:block;
+
+    width:100%;
+
+    padding:9px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #d4af37,
+    #ffe38a,
+    #d4af37);
+
+    color:#111;
+
+    font-weight:900;
+
+    font-size:.8rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.04em;
+
 }
 
-.promo-addon-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-size: 0.62rem;
+/* ==========================
+MAIN OFFER
+========================== */
+
+.promo-main-offer{
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    color:#163c80;
+
+    line-height:1.05;
+
 }
 
-.promo-addon-badge {
-  background: var(--gold);
-  color: #000;
-  font-weight: 800;
-  padding: 2px 5px;
-  border-radius: 4px;
+.promo-main-offer span{
+
+    display:block;
+
+    font-size:3rem;
+
+    color:var(--card-accent);
+
 }
 
-/* Saturday Specific Compact Grid Styling */
-.saturday-body {
-  text-align: left;
-  gap: 8px;
-  justify-content: flex-start;
+/* ==========================
+VERIFY BOX
+========================== */
+
+.promo-verify-box{
+
+    border:2px dashed #d7d7d7;
+
+    border-radius:14px;
+
+    padding:14px;
+
+    color:#666;
+
+    font-size:.85rem;
+
+    background:#fff;
+
 }
 
-.sat-price-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* ==========================
+BUTTON
+========================== */
+
+.promo-mini-btn{
+
+    display:block;
+
+    text-align:center;
+
+    background:var(--card-bg);
+
+    color:#fff;
+
+    padding:12px;
+
+    border-radius:999px;
+
+    font-weight:800;
+
+    transition:.25s;
+
 }
 
-.sat-box {
-  background: rgba(0,0,0,0.3);
-  padding: 5px 8px;
-  border-radius: 6px;
-  border-left: 3px solid #FB923C;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.promo-mini-btn:hover{
+
+    filter:brightness(1.08);
+
 }
 
-.sat-box-title {
-  font-size: 0.58rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  font-weight: 600;
+/* ==========================
+WORKING DAY
+========================== */
+
+.promo-addon-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
 }
 
-.sat-box-price {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 0.78rem;
-  color: #fff;
-}
-.sat-box-price small {
-  font-size: 0.52rem;
-  color: var(--muted);
-  text-decoration: line-through;
-  font-weight: 400;
-  margin-left: 3px;
+.promo-addon-badge{
+
+    background:#d4af37;
+
+    color:#111;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-weight:900;
+
 }
 
-.sat-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.58rem;
-  color: #ddd;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px 4px;
-}
-.sat-features li::before {
-  content: "✓ ";
-  color: #FB923C;
-  font-weight: bold;
+/* ==========================
+SATURDAY
+========================== */
+
+.saturday-body{
+
+    text-align:left;
+
 }
 
-/* Sunday Banner Compact */
-.sunday-body {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  min-height: auto;
+.sat-price-grid{
+
+    display:grid;
+
+    gap:12px;
+
 }
 
-.sunday-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-align: left;
+.sat-box{
+
+    background:#fff7ed;
+
+    border-left:6px solid #f97316;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
 }
 
-.sunday-title-group h3 {
-  font-size: 0.7rem;
-  margin: 0;
-  color: #fff;
-  text-transform: uppercase;
+.sat-box-title{
+
+    font-weight:700;
+
+    color:#555;
+
 }
 
-.sunday-title-group p {
-  font-size: 0.82rem;
-  margin: 0;
-  font-weight: 800;
-  color: #FB7185;
+.sat-box-price{
+
+    font-size:1.3rem;
+
+    font-weight:900;
+
+    color:#111;
+
 }
 
-/* Mini Action CTA inside cards */
-.promo-mini-btn {
-  background: rgba(255,255,255,0.06);
-  color: var(--gold-soft);
-  text-align: center;
-  font-size: 0.62rem;
-  font-weight: 700;
-  padding: 5px;
-  border-radius: 4px;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: background 0.2s;
-  display: block;
-}
-.promo-mini-btn:hover {
-  background: var(--gold);
-  color: #000;
+.sat-box-price small{
+
+    display:block;
+
+    font-size:.8rem;
+
+    color:#999;
+
+    text-decoration:line-through;
+
 }
 
-/* Theme Colors per Card matching Poster */
-.card-student { --card-bg: #6B21A8; --card-accent: #C084FC; }
-.card-grab { --card-bg: #15803D; --card-accent: #4ADE80; }
-.card-working { --card-bg: #1E40AF; --card-accent: #60A5FA; }
-.card-saturday { --card-bg: #C2410C; --card-accent: #FB923C; }
-.card-sunday { --card-bg: #BE123C; --card-accent: #FB7185; }
+.sat-features{
 
-/* Desktop adjustment */
-@media (min-width: 768px) {
-  .promo-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .promo-card--wide {
-    grid-column: span 3;
-  }
+    margin:0;
+
+    padding-left:20px;
+
+    color:#444;
+
+    line-height:1.8;
+
+}
+
+.sat-features li{
+
+    margin-bottom:4px;
+
+}
+
+/* ==========================
+SUNDAY
+========================== */
+
+.promo-card--wide{
+
+    grid-column:1/-1;
+
+}
+
+.sunday-body{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#fff;
+
+    padding:22px;
+
+}
+
+.sunday-content{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.sunday-title-group h3{
+
+    margin:0;
+
+    font-size:1.2rem;
+
+    text-transform:uppercase;
+
+    color:#be185d;
+
+}
+
+.sunday-title-group p{
+
+    margin:0;
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    color:#ff2f6d;
+
+}
+
+/* ==========================
+CARD COLORS
+========================== */
+
+.card-student{
+
+    --card-bg:#6b21a8;
+
+    --card-accent:#6b21a8;
+
+}
+
+.card-grab{
+
+    --card-bg:#16a34a;
+
+    --card-accent:#16a34a;
+
+}
+
+.card-working{
+
+    --card-bg:#2563eb;
+
+    --card-accent:#2563eb;
+
+}
+
+.card-saturday{
+
+    --card-bg:#f97316;
+
+    --card-accent:#f97316;
+
+}
+
+.card-sunday{
+
+    --card-bg:#ec4899;
+
+    --card-accent:#ec4899;
+
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media (max-width:900px){
+
+    .promo-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .promo-card--wide{
+
+        grid-column:auto;
+
+    }
+
+    .promo-panel-title{
+
+        font-size:1.5rem;
+
+    }
+
+    .promo-main-offer{
+
+        font-size:1.5rem;
+
+    }
+
+    .promo-main-offer span{
+
+        font-size:2.4rem;
+
+    }
+
+    .sunday-body{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        text-align:center;
+
+    }
+
+    .sunday-content{
+
+        justify-content:center;
+
+    }
+
 }
