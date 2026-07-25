@@ -848,57 +848,51 @@ img {
     font-weight:900;
 }
 
-/* ==========================
-GRID
-========================== */
+/* ==========================================================
+PROMOTION GRID
+========================================================== */
 
 .promo-grid{
-
     display:grid;
-
     grid-template-columns:repeat(2,minmax(0,1fr));
-
-    gap:20px;
-
-    align-items:stretch;
-
+    gap:18px;
+    align-items:start;
 }
 
-/* ==========================
+/* Sunday card */
+.promo-card--wide{
+    grid-column:1/-1;
+    max-width:430px;
+    width:100%;
+    justify-self:center;
+}
+
+/* ==========================================================
 CARD
-========================== */
+========================================================== */
 
 .promo-card{
 
-    background:#ffffff;
-
+    background:#fff;
     color:#111;
 
-    border-radius:20px;
+    border-radius:18px;
 
     overflow:hidden;
 
     border:2px solid #ececec;
 
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.12);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
 
     display:flex;
-
     flex-direction:column;
 
     transition:.25s;
 }
 
 .promo-card:hover{
-
-    transform:translateY(-5px);
-
+    transform:translateY(-4px);
 }
-
-/* ==========================
-HEADER
-========================== */
 
 .promo-card-header{
 
@@ -907,204 +901,119 @@ HEADER
     color:#fff;
 
     display:flex;
-
     align-items:center;
+    gap:12px;
 
-    gap:14px;
-
-    padding:16px 18px;
-
+    padding:14px 16px;
 }
 
 .promo-card-icon{
 
-    width:48px;
-
-    height:48px;
+    width:42px;
+    height:42px;
 
     border-radius:50%;
 
     background:#fff;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     flex:none;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.18);
-
 }
 
 .promo-card-icon svg{
 
-    width:24px;
-
-    height:24px;
+    width:22px;
+    height:22px;
 
     fill:var(--card-bg);
-
 }
 
 .promo-card-title{
 
-    font-size:1.05rem;
+    margin:0;
+
+    font-size:1rem;
 
     font-weight:900;
 
     text-transform:uppercase;
-
-    letter-spacing:.04em;
-
-    margin:0;
-
 }
-
-/* ==========================
-BODY
-========================== */
 
 .promo-card-body{
 
-    padding:22px;
+    padding:18px;
 
     display:flex;
-
     flex-direction:column;
 
-    gap:18px;
+    gap:14px;
 
     flex:1;
 
     text-align:center;
-
 }
-
-/* ==========================
-DAY RIBBON
-========================== */
 
 .promo-days-badge{
 
     display:block;
 
-    width:100%;
-
-    padding:9px;
-
-    border-radius:999px;
-
-    background:
-    linear-gradient(
-    90deg,
-    #d4af37,
-    #ffe38a,
-    #d4af37);
+    background:linear-gradient(90deg,#d4af37,#ffe38a,#d4af37);
 
     color:#111;
 
+    padding:8px;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
     font-weight:900;
 
-    font-size:.8rem;
-
     text-transform:uppercase;
-
-    letter-spacing:.04em;
-
 }
-
-/* ==========================
-MAIN OFFER
-========================== */
 
 .promo-main-offer{
 
-    font-size:2rem;
+    font-size:1.45rem;
 
     font-weight:900;
 
+    line-height:1.1;
+
     color:#163c80;
-
-    line-height:1.05;
-
 }
 
 .promo-main-offer span{
 
     display:block;
 
-    font-size:3rem;
+    font-size:2.4rem;
 
     color:var(--card-accent);
-
 }
-
-/* ==========================
-VERIFY BOX
-========================== */
 
 .promo-verify-box{
 
-    border:2px dashed #d7d7d7;
+    border:2px dashed #ddd;
 
-    border-radius:14px;
-
-    padding:14px;
-
-    color:#666;
-
-    font-size:.85rem;
-
-    background:#fff;
-
-}
-
-/* ==========================
-BUTTON
-========================== */
-
-.promo-mini-btn{
-
-    display:block;
-
-    text-align:center;
-
-    background:var(--card-bg);
-
-    color:#fff;
+    border-radius:12px;
 
     padding:12px;
 
-    border-radius:999px;
+    font-size:.82rem;
 
-    font-weight:800;
-
-    transition:.25s;
-
+    color:#666;
 }
-
-.promo-mini-btn:hover{
-
-    filter:brightness(1.08);
-
-}
-
-/* ==========================
-WORKING DAY
-========================== */
 
 .promo-addon-row{
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    gap:10px;
-
+    gap:8px;
 }
 
 .promo-addon-badge{
@@ -1113,250 +1022,288 @@ WORKING DAY
 
     color:#111;
 
-    padding:8px 14px;
+    border-radius:999px;
+
+    padding:6px 12px;
+
+    font-weight:800;
+}
+
+.promo-mini-btn{
+
+    display:block;
+
+    background:var(--card-bg);
+
+    color:#fff;
 
     border-radius:999px;
 
-    font-weight:900;
+    padding:11px;
 
+    font-weight:800;
+
+    text-align:center;
 }
 
-/* ==========================
-SATURDAY
-========================== */
+/* Saturday */
 
 .saturday-body{
-
     text-align:left;
-
 }
 
 .sat-price-grid{
-
     display:grid;
-
-    gap:12px;
-
+    gap:10px;
 }
 
 .sat-box{
 
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
     background:#fff7ed;
 
-    border-left:6px solid #f97316;
-
-    padding:14px;
+    border-left:5px solid #f97316;
 
     border-radius:10px;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-.sat-box-title{
-
-    font-weight:700;
-
-    color:#555;
-
+    padding:12px;
 }
 
 .sat-box-price{
 
-    font-size:1.3rem;
+    font-size:1.15rem;
 
     font-weight:900;
-
-    color:#111;
-
 }
 
 .sat-box-price small{
 
     display:block;
 
-    font-size:.8rem;
-
     color:#999;
 
-    text-decoration:line-through;
+    font-size:.75rem;
 
+    text-decoration:line-through;
 }
 
 .sat-features{
 
     margin:0;
 
-    padding-left:20px;
+    padding-left:18px;
+
+    line-height:1.7;
 
     color:#444;
-
-    line-height:1.8;
-
 }
 
-.sat-features li{
-
-    margin-bottom:4px;
-
-}
-
-/* ==========================
-SUNDAY
-========================== */
-
-.promo-card--wide{
-
-    grid-column:1/-1;
-
-}
+/* Sunday */
 
 .sunday-body{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
-    background:#fff;
+    gap:20px;
 
-    padding:22px;
-
+    padding:18px;
 }
 
 .sunday-content{
 
     display:flex;
-
     align-items:center;
-
-    gap:18px;
-
+    gap:14px;
 }
 
 .sunday-title-group h3{
 
     margin:0;
 
-    font-size:1.2rem;
-
-    text-transform:uppercase;
-
     color:#be185d;
 
+    font-size:1rem;
 }
 
 .sunday-title-group p{
 
     margin:0;
 
-    font-size:2rem;
-
-    font-weight:900;
-
     color:#ff2f6d;
 
+    font-size:1.45rem;
+
+    font-weight:900;
 }
 
-/* ==========================
-CARD COLORS
-========================== */
+/* Colors */
 
 .card-student{
-
     --card-bg:#6b21a8;
-
     --card-accent:#6b21a8;
-
 }
 
 .card-grab{
-
     --card-bg:#16a34a;
-
     --card-accent:#16a34a;
-
 }
 
 .card-working{
-
     --card-bg:#2563eb;
-
     --card-accent:#2563eb;
-
 }
 
 .card-saturday{
-
     --card-bg:#f97316;
-
     --card-accent:#f97316;
-
 }
 
 .card-sunday{
-
     --card-bg:#ec4899;
-
     --card-accent:#ec4899;
-
 }
 
-/* ==========================
-RESPONSIVE
-========================== */
+/* ==========================================================
+MOBILE
+========================================================== */
 
-@media (max-width:900px){
+@media (max-width:768px){
 
     .promo-grid{
 
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
 
+        gap:10px;
     }
 
-    .promo-card--wide{
+    .promo-card{
 
-        grid-column:auto;
-
+        border-radius:14px;
     }
 
-    .promo-panel-title{
+    .promo-card-header{
 
-        font-size:1.5rem;
+        padding:10px;
+    }
 
+    .promo-card-icon{
+
+        width:32px;
+        height:32px;
+    }
+
+    .promo-card-title{
+
+        font-size:.72rem;
+    }
+
+    .promo-card-body{
+
+        padding:12px;
+
+        gap:10px;
+    }
+
+    .promo-days-badge{
+
+        font-size:.58rem;
+
+        padding:6px;
     }
 
     .promo-main-offer{
 
-        font-size:1.5rem;
-
+        font-size:1rem;
     }
 
     .promo-main-offer span{
 
-        font-size:2.4rem;
+        font-size:1.7rem;
+    }
 
+    .promo-verify-box{
+
+        font-size:.62rem;
+
+        padding:8px;
+    }
+
+    .promo-addon-row{
+
+        flex-direction:column;
+
+        gap:6px;
+    }
+
+    .promo-mini-btn{
+
+        padding:8px;
+
+        font-size:.72rem;
+    }
+
+    .sat-box{
+
+        padding:8px;
+    }
+
+    .sat-box-title{
+
+        font-size:.7rem;
+    }
+
+    .sat-box-price{
+
+        font-size:.82rem;
+    }
+
+    .sat-box-price small{
+
+        font-size:.55rem;
+    }
+
+    .sat-features{
+
+        font-size:.68rem;
+
+        padding-left:16px;
+    }
+
+    .promo-card--wide{
+
+        grid-column:1/-1;
+
+        max-width:240px;
     }
 
     .sunday-body{
 
         flex-direction:column;
 
-        gap:18px;
-
         text-align:center;
 
+        gap:10px;
+
+        padding:12px;
     }
 
     .sunday-content{
 
         justify-content:center;
-
     }
 
+    .sunday-title-group h3{
+
+        font-size:.8rem;
+    }
+
+    .sunday-title-group p{
+
+        font-size:1rem;
+    }
 }
