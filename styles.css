@@ -846,21 +846,24 @@ img {
 
 .promo-poster{
     width:100%;
+    aspect-ratio:1/1;
     display:block;
+
+    object-fit:cover;
+    object-position:center;
+
     border-radius:24px;
-    overflow:hidden;
     border:2px solid rgba(212,175,55,.25);
     box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
 @media (max-width:768px){
-
     .promo-panel-title{
         font-size:1.35rem;
     }
 
     .promo-poster{
+        aspect-ratio:1/1;
         border-radius:18px;
     }
-
 }
