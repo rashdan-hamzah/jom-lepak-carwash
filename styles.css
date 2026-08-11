@@ -858,7 +858,7 @@ img {
 
 .promo-poster{
     width:100%;
-    aspect-ratio:540/799;
+    aspect-ratio:9/16;
     display:none;
 
     object-fit:cover;
