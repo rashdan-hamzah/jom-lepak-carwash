@@ -168,6 +168,52 @@ if (promoSlider && promoItems.length) {
 
 }
 
+/* ======================================================
+   HERO PROMO CAROUSEL
+====================================================== */
+
+(() => {
+  const promoWrapper = document.querySelector(".hero-promo-wrapper");
+  if (!promoWrapper) return;
+
+  const posters = promoWrapper.querySelectorAll(".promo-poster");
+  const dots = promoWrapper.querySelectorAll(".promo-dot");
+  const prevBtn = promoWrapper.querySelector(".promo-nav.prev");
+  const nextBtn = promoWrapper.querySelector(".promo-nav.next");
+
+  if (!posters.length || !dots.length || !prevBtn || !nextBtn) return;
+
+  let currentIndex = 0;
+  let timer;
+
+  const showSlide = (index) => {
+    currentIndex = (index + posters.length) % posters.length;
+    posters.forEach((poster, i) => poster.classList.toggle("active", i === currentIndex));
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+  };
+
+  const nextSlide = () => showSlide(currentIndex + 1);
+  const prevSlide = () => showSlide(currentIndex - 1);
+
+  const startAutoSlide = () => {
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 4000);
+  };
+
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    startAutoSlide();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    startAutoSlide();
+  });
+
+  showSlide(currentIndex);
+  startAutoSlide();
+})();
+
 
 /* ======================================================
    OPTIONAL AUTOPLAY (DISABLED)
