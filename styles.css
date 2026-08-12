@@ -852,13 +852,14 @@ img {
 
 .promo-track{
     width:100%;
-    max-width:540px;
+    max-width:320px;
     margin:0 auto;
 }
 
 .promo-poster{
     width:100%;
     aspect-ratio:9/16;
+    max-height:560px;
     display:none;
 
     object-fit:cover;
@@ -894,7 +895,12 @@ img {
         font-size:1.35rem;
     }
 
+    .promo-track{
+        max-width:260px;
+    }
+
     .promo-poster{
+        max-height:460px;
         border-radius:18px;
     }
 
