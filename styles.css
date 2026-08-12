@@ -783,129 +783,239 @@ body {
 
 
 
-.hero-promo-wrapper,
-.package-gallery,
-.promo-slider {
-  width: 100%;
-  max-width: 100%;
-}
+/* =========================================================
+   APPLE-STYLE HERO PROMO CAROUSEL
+   ========================================================= */
 
 .hero-promo-wrapper {
+  width: 100%;
   min-width: 0;
-  overflow: hidden;
 }
 
-img {
+.promo-panel-head {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.promo-panel-eyebrow {
   display: block;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
 }
 
-.hero-content > div {
-  min-width: 0;
-  max-width: 100%;
+.promo-panel-title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.2;
+  font-weight: 800;
+  color: #fff;
 }
 
-.package-heading{
-    margin: 2.8rem 0 1rem;
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: 700;
+/* =========================
+   CAROUSEL
+   ========================= */
+
+.promo-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
 }
 
-.package-heading:first-of-type{
-    margin-top: 2rem;
+.promo-track {
+  position: relative;
+  width: 100%;
+  height: 320px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(212, 175, 55, 0.22);
+
+  background: #080808;
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.45);
 }
 
-.package-gallery{
-    margin-bottom: 1rem;
+.promo-poster {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: none;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 24px;
 }
 
-.hero-promo-wrapper{
-    width:100%;
+.promo-poster.active {
+  display: block;
+  animation: promoFade 0.35s ease;
 }
 
-.promo-panel-head{
-    text-align:center;
-    margin-bottom:18px;
+@keyframes promoFade {
+  from {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.promo-panel-eyebrow{
-    display:block;
-    color:var(--gold);
-    font-size:.8rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    margin-bottom:6px;
+/* =========================
+   NAVIGATION BUTTONS
+   ========================= */
+
+.promo-nav {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(12px);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-size: 1.1rem;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.promo-panel-title{
-    font-size:1.8rem;
-    font-weight:800;
-    color:#fff;
+.promo-nav:hover {
+  background: rgba(0, 0, 0, 0.75);
+
+  border-color: rgba(212, 175, 55, 0.65);
+
+  transform: translateY(-50%) scale(1.05);
 }
 
-.promo-carousel{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.promo-nav.prev {
+  left: 14px;
 }
 
-.promo-track{
-    width:100%;
-    max-width:320px;
-    margin:0 auto;
+.promo-nav.next {
+  right: 14px;
 }
 
-.promo-poster{
-    width:100%;
-    aspect-ratio:9/16;
-    max-height:560px;
-    display:none;
+/* =========================
+   DOTS
+   ========================= */
 
-    object-fit:cover;
-    object-position:center;
+.promo-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-radius:24px;
-    border:2px solid rgba(212,175,55,.25);
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+  gap: 7px;
+
+  margin-top: 14px;
 }
 
-.promo-poster.active{
-    display:block;
+.promo-dot {
+  width: 6px;
+  height: 6px;
+
+  padding: 0;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.28);
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
 }
 
-.promo-nav{
-    background:rgba(212,175,55,.15);
-    border:1px solid rgba(212,175,55,.45);
-    color:var(--gold-soft);
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:1.2rem;
-    line-height:1;
+.promo-dot.active {
+  width: 20px;
+  background: var(--gold);
 }
 
-.promo-nav:hover{
-    background:rgba(212,175,55,.28);
+/* =========================
+   DESKTOP
+   ========================= */
+
+@media (min-width: 769px) {
+
+  .promo-carousel {
+    max-width: 540px;
+  }
+
+  .promo-track {
+    height: 320px;
+  }
+
 }
 
-@media (max-width:768px){
-    .promo-panel-title{
-        font-size:1.35rem;
-    }
+/* =========================
+   MOBILE
+   ========================= */
 
-    .promo-track{
-        max-width:260px;
-    }
+@media (max-width: 768px) {
 
-    .promo-poster{
-        max-height:460px;
-        border-radius:18px;
-    }
+  .hero-promo-wrapper {
+    margin-top: 1rem;
+  }
 
-    .promo-nav{
-        width:34px;
-        height:34px;
-    }
+  .promo-panel-title {
+    font-size: 1.3rem;
+  }
+
+  .promo-track {
+    height: 230px;
+    border-radius: 20px;
+  }
+
+  .promo-poster {
+    border-radius: 20px;
+  }
+
+  .promo-nav {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .promo-nav.prev {
+    left: 10px;
+  }
+
+  .promo-nav.next {
+    right: 10px;
+  }
+
 }
